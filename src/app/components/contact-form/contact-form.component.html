@@ -1,0 +1,74 @@
+<section class="limit-content custom-margin-bottom " id="contact">
+    <!-- contacto -->
+    <div class="mb-16 flex flex-col justify-center items-center">
+        <p class="text-dark font-bold mb-1">Contacto</p>
+        <div class="custom-underline w-14"></div>
+    </div>
+     <form 
+        #contactForm="ngForm"
+        class="contact-form w-2/3 mx-auto h-96 flex flex-col items-center justify-around p-8 rounded-lg mb-32" >
+        <ul class="w-full">
+            <li class="input-group">
+                <input 
+                    name="name"
+                    [(ngModel)]="message.name"
+                    class="input"
+                    #name="ngModel" 
+                    required>
+                <label class="placeholder">Nombre</label>
+                @if (name.invalid && (name.dirty || name.touched)) {
+                    @if(name.errors!['required']){
+                        <div class="input-error">
+                            Nombre es requerido
+                        </div>
+                        }
+                    }
+            </li>
+            <li class="input-group">
+                <input 
+                    name="email"
+                    [(ngModel)]="message.email"
+                    class="input"
+                    #email="ngModel" 
+                    required
+                    email>
+                <label class="placeholder">Correo</label>
+                @if (email.invalid && (email.dirty || email.touched)) {
+                    @if(email.errors!['required']){
+                        <div class="input-error">
+                            Correo es requerido
+                        </div>
+                        }
+                    @if(email.errors!['email']){
+                            <div class="input-error--soft">
+                                Debe ser un correo electronico
+                            </div>
+                        }
+                    }
+            </li>
+            <li class="input-group " style="height: 150px;">
+                <textarea 
+                    name="content"
+                    [(ngModel)]="message.content"
+                    class="input"
+                    #content="ngModel" 
+                    required
+                    style="height: 120px;"></textarea>
+                <label class="placeholder">Mensaje</label>
+                @if (content.invalid && (content.dirty || content.touched)) {
+                    @if(content.errors!['required']){
+                        <div class="input-error">
+                            Mensaje es requerido
+                        </div>
+                        }
+                    }
+            </li>
+        </ul>
+       
+        <button 
+            class="button px-4"
+            (click)="sendMessage(contactForm)" 
+            [disabled]="(contactForm.invalid)"
+            [ngClass]="{'button--disabled': (contactForm.invalid)}">Enviar</button>
+     </form>
+</section>

@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+    --dark: hsl(0, 0%, 6%);
+    --grey: hsl(0, 0%, 29%);
+    --grey-light: hsl(0, 0%, 45%);
+    --white-off: hsl(0, 0%, 90%);
+}
+html {
+    scroll-behavior: smooth;
+  }
+.text-dark{
+    color: var(--dark);  
+}
+.text-grey{
+    color: var(--grey);    
+}
+.text-light{
+    color: var(--grey-light);
+}
+.custom-text-white{
+    color: var(--white-off);
+}
+.custom-bg-white{
+    background-color: var(--white-off);
+}
+.limit-content{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.custom-margin-bottom{
+    padding-top: 5rem;
+}
+.custom-underline{
+    background-color: var(--dark);
+    height: 5px;
+    border-radius: 3px;
+}

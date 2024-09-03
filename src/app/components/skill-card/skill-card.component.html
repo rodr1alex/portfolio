@@ -1,0 +1,8 @@
+<div class="flex flex-wrap justify-between" id="FrontEndSkills">
+    @for (skill of skills; track $index) {
+        <div class="skill">
+            <div class="skill__svg" [ngStyle]="{ 'background-image': 'url(' + skill.SvgURL + ')' }"></div>
+            <p class="skill__name">{{skill.skillName}}</p>
+        </div>
+    }
+</div>

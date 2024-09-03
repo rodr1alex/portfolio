@@ -1,0 +1,40 @@
+<article class="project-card flex  mb-48 relative" #projectCard>
+    <!-- esto es un proyecto -->
+    <div class="flex flex-col  px-4 py-6" style="width: 48%;">
+        <div class="mb-auto">
+            <h3 class="custom-text-white font-bold mb-2">{{proyect.name}}</h3>
+            @for(text of proyect.description.split('.'); track $index){
+                <p class="custom-text-white mb-2">{{text}}</p>
+            }
+        </div>
+        <div class="flex  flex-wrap w-4/5">
+            @for (skill of proyect.skills; track $index) {
+                <div class="custom-bg-white rounded-full px-2 h-7 flex justify-center items-center mr-4 mb-2">
+                    <p class="text-dark font-semibold">{{skill}}</p>
+                </div>
+            }
+        </div>
+        <div class="flex self-center mt-4">
+            <div class="flex items-center mx-10">
+                <a class="custom-text-white font-bold mx-2" href="{{proyect.webUrl}}" target="_blank">Ver proyecto</a>
+                <i class=" custom-text-white fa-brands fa-safari text-3xl"></i>
+            </div>
+            <div class="flex items-center mx-10">
+                <a class="custom-text-white font-bold mx-2" href="{{proyect.githubUrl}}" target="_blank">Ver código</a>
+                <i class=" custom-text-white fa-brands fa-github text-3xl"></i>
+            </div>                       
+        </div>
+    </div>
+    <div class="carousel" style="width: 52%;">
+        <div class="carousel__slide" id={{proyect.webUrl}}>
+            @for (img of proyect.images; track $index) {
+                <img src="{{img}}" class="carousel__img" >
+            }
+        </div>
+        <div class="carousel__layer h-full absolute top-0"></div>
+        <div class="absolute top-0 flex w-full h-full justify-center items-end p-4">
+            <button class="carousel__button carousel__button--prev" (click)="previousImage()">❮</button>
+            <button class="carousel__button carousel__button--next" (click)="nextImage()">❯</button>
+        </div>
+    </div>
+</article>

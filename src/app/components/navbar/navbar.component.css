@@ -1,0 +1,11 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+.menu-item:hover{
+    color: rgb(94, 135, 232);
+}
