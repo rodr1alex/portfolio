@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Message } from '../../models/Message';
 import { ContactService } from '../../services/contact.service';
+import { response } from 'express';
 @Component({
   selector: 'contact-form',
   standalone: true,
@@ -17,6 +18,12 @@ export class ContactFormComponent {
 
 
   sendMessage(userForm: NgForm){
-    this.contactService.sendMessage(this.message);
+    this.contactService.sendMessage(this.message).subscribe(
+      {
+        next: response =>{
+          alert(response.response)
+        }
+      }
+    );
   }
 }
