@@ -17,13 +17,6 @@ export class ContactFormComponent {
 
 
   sendMessage(userForm: NgForm){
-    this.contactService.sendMessage(this.message).subscribe(
-      {
-        next: response =>{
-          alert(response.response);
-          userForm.reset();
-        }
-      }
-    )
+    this.contactService.sendMessage(this.message);
   }
 }
