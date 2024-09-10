@@ -48,3 +48,10 @@
 .carousel:hover  .carousel__button{
     opacity: 100;
 }
+
+.proyect-link:hover p{
+    color: white;
+}
+.proyect-link:hover i{
+    color: white;
+}
