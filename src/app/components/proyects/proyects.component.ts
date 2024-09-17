@@ -14,7 +14,7 @@ export class ProyectsComponent {
     name:'E-Commerce',
     description:'Aplicación web de comercio electrónico para tienda deportiva, los usuarios pueden escoger productos por color y talla.Posee sistema de gestión de inventario, ventas y usuarios. Administrador puede anular o modificar productos de una venta, restaurando stock original de productos',
     skills : ['Angular','Spring Boot','TypeScript', 'Java', 'MySQL', 'Tailwind', 'AWS'],
-    webUrl:'http://ecommerce-angular-rodr1alexdev.s3-website-sa-east-1.amazonaws.com/home',
+    webUrl:'http://ecomerce-app-rodr1alexdev.s3-website-sa-east-1.amazonaws.com',
     githubUrl:'https://github.com/rodr1alex/ecomerce-front',
     images:[
       '/img/proyects/ecomerce/1.png',
@@ -31,7 +31,7 @@ export class ProyectsComponent {
     name:'Metas App',
     description:'Aplicación web de gamificacion de objetivos. Usuarios pueden crear distintas metas e ir registrando sus logros',
     skills : ['React','NodeJS','Express', 'PostgreSQL', 'Tailwind', 'AWS'],
-    webUrl:'http://metasapp-react-rodr1alexdev.s3-website-sa-east-1.amazonaws.com/acceso',
+    webUrl:'http://metasapp-rodr1alexev.s3-website-sa-east-1.amazonaws.com',
     githubUrl:'https://github.com/rodr1alex/ecomerce-front',
     images:[
       '/img/proyects/metasapp/1.png',
