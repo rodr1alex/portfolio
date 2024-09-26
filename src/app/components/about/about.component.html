@@ -1,31 +1,33 @@
-<section class="about flex justify-start items-center " id="about">
-    <div class="flex justify-center items-center w-11/12">
-        <section class="about__description ">
-            <h2 class="custom-text-white font-bold text-6xl mb-2">Rodrigo Alex</h2>
-            <h2 class="custom-text-white font-bold text-6xl mb-2">Ayelef Huilipan</h2>
-            <h1 class="custom-text-white font-bold mb-2 text-2xl">Programador web Full-Stack</h1>
-            <div>
-                <p class="custom-text-white font-bold mb-1 text-lg">
+<section class="about flex flex-col justify-center items-center" id="about">
+    <!-- <div class="flex flex-col justify-center items-center w-11/12">
+        
+    </div> -->
+
+    <div class="grid">
+        <img class="portrait" src="/img/portrait/2.1.jpg" alt="retrato">
+        <section class="description">
+            <h2 class="description__name desktop text-6xl">Rodrigo Alex</h2>
+            <h2 class="description__name desktop">Ayelef Huilipan</h2>
+            <h2 class="description__name md:hidden">Rodrigo Ayelef</h2>
+            <h1 class="description__subtible text-2xl">Programador web Full-Stack</h1>
+            <div class="desktop">
+                <p class="description__main">
                     Profesional altamente enfocado en la calidad del código.
                 </p>
-                <p class="custom-text-white font-bold mb-1 text-lg">
-                    Conocimiento profundo en tecnologías reconocidas por su fiabilidad y estabilidad como son 
+                <p class="description__main">
+                    Conocimiento profundo en tecnologías reconocidas por su fiabilidad y estabilidad como son
                     <span class="flex"> <img src="/angular.svg" width="16" alt="">&nbsp;Angular y &nbsp;
                         <img src="/spring.svg" width="16" alt="">&nbsp;Spring Boot.</span>
                 </p>
             </div>
         </section>
-        <div>
-            <img class="about__portrait" 
-            src="/img/portrait/2.1.jpg" alt="">
-            <div class="flex justify-center items-center my-2">
-                <a class="custom-text-white fa-brands fa-github text-5xl mx-4 hover:text-white" href="https://github.com/rodr1alex" target="_blank"></a>
-                <a class="text-grey fa-brands fa-linkedin-in text-3xl mx-4 rounded-full w-12 h-12 custom-bg-white flex justify-center items-center hover:bg-white" href="https://linkedin.com/in/rodrigo-alex-ayelef-huilipan-aab0b7208" target="_blank">
-                    
-                </a>
-                
-            </div>
-        </div>
+        <section class="media">
+            <a class="custom-text-white fa-brands fa-github text-5xl mx-4 hover:text-white" href="https://github.com/rodr1alex" target="_blank"></a>
+            <a class="text-grey fa-brands fa-linkedin-in text-3xl mx-4 rounded-full w-12 h-12 custom-bg-white flex justify-center items-center hover:bg-white" href="https://linkedin.com/in/rodrigo-alex-ayelef-huilipan-aab0b7208" target="_blank">
+
+            </a>
+        </section>
     </div>
     
 </section>
+

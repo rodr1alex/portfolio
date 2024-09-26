@@ -3,7 +3,7 @@
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-    height: 24rem;
+    min-height: 600px;
 }
 .carousel {
     position: relative;
@@ -54,4 +54,17 @@
 }
 .proyect-link:hover i{
     color: white;
+}
+
+@media (min-width: 900px) {
+    .project-card{
+        height: 24rem;
+        min-height: 00px;
+    }
+    .description{
+        width: 48%;
+    }
+    .carousel{
+        width: 52%;
+    }
 }

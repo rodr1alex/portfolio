@@ -3,7 +3,8 @@
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
-    width: 28%;
+    /* width: 28%; */
+    height: 360px;
 }
 .skill{
     display: flex;

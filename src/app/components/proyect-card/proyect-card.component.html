@@ -1,31 +1,32 @@
-<article class="project-card flex  mb-48 relative" #projectCard>
-    <!-- esto es un proyecto -->
-    <div class="flex flex-col  px-4 py-6" style="width: 48%;">
-        <div class="mb-auto">
+<article class="project-card flex flex-col md:flex-row mb-16 md:mb-48 w-11/12 mx-auto md:h-96 relative" #projectCard>
+
+    <div class="description flex flex-col px-4 pt-6 pb-2 md:py-6 justify-start flex-grow" >
+        <div class="mb-8 flex-grow">
             <h3 class="custom-text-white font-bold mb-2">{{proyect.name}}</h3>
             @for(text of proyect.description.split('.'); track $index){
                 <p class="custom-text-white mb-2">{{text}}</p>
             }
         </div>
-        <div class="flex  flex-wrap w-4/5">
+        <div class="flex flex-wrap justify-center md:justify-start md:w-4/5 ">
             @for (skill of proyect.skills; track $index) {
-                <div class="custom-bg-white rounded-full px-2 h-7 flex justify-center items-center mr-4 mb-2">
-                    <p class="text-dark font-semibold">{{skill}}</p>
+                <div class="custom-bg-white rounded-full px-1 md:px-2 h-5 md:h-7 flex justify-center items-center mr-2 mb-2 md:mr-4 ">
+                    <p class="text-dark font-semibold text-sm md:text-base">{{skill}}</p>
                 </div>
             }
         </div>
-        <div class="flex self-center mt-4">
-            <a class="flex items-center mx-10 proyect-link" href="{{proyect.webUrl}}" target="_blank">
+        <div class="flex self-center mt-2">
+            <a class="flex flex-col-reverse items-center mx-4 md:mx-10 proyect-link md:flex-row" href="{{proyect.webUrl}}" target="_blank">
                 <p class="custom-text-white font-bold mx-2 ">Ver proyecto</p>
-                <i class="custom-text-white fa-brands fa-safari text-3xl "></i>
+                <i class="custom-text-white fa-brands fa-safari text-3xl" style="line-height: 0.75"></i>
             </a>
-            <a class="flex items-center mx-10 proyect-link" href="{{proyect.githubUrl}}" target="_blank">
+            <a class="flex flex-col-reverse items-center mx-4 md:mx-10 proyect-link md:flex-row" href="{{proyect.githubUrl}}" target="_blank">
                 <p class="custom-text-white font-bold mx-2" >Ver código</p>
-                <i class="custom-text-white fa-brands fa-github text-3xl"></i>
+                <i class="custom-text-white fa-brands fa-github text-3xl" style="line-height: 0.75"></i>
             </a>                       
         </div>
     </div>
-    <div class="carousel" style="width: 52%;">
+
+    <div class="carousel">
         <div class="carousel__slide" id={{proyect.webUrl}}>
             @for (img of proyect.images; track $index) {
                 <img src="{{img}}" class="carousel__img" >
@@ -37,4 +38,5 @@
             <button class="carousel__button carousel__button--next" (click)="nextImage()">❯</button>
         </div>
     </div>
+
 </article>

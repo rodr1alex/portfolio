@@ -39,3 +39,14 @@ html {
     height: 5px;
     border-radius: 3px;
 }
+
+
+.desktop{
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .desktop{
+      display: block;
+    }
+  }
