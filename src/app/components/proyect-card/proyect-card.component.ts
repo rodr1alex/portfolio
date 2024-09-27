@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import { Proyect } from '../../models/Proyect';
+import { access } from 'fs';
 
 @Component({
   selector: 'proyect-card',
@@ -15,6 +16,9 @@ export class ProyectCardComponent implements OnInit, AfterViewInit{
   portraitSize:number = 700; // tratar de obtener este numero dinamicamente!!!
   carouselSlide!: Element | null;
 
+  touchStartX = 0;
+  touchEndX = 0;
+
   ngOnInit(): void {
      this.carouselSlide = document.getElementById(this.proyect.name);   
      
@@ -26,6 +30,9 @@ export class ProyectCardComponent implements OnInit, AfterViewInit{
       const ancho = this.projectCard.nativeElement.offsetWidth;
       console.log('Ancho del contenedor:', ancho);
       this.portraitSize = ancho * 0.52;
+      if(ancho < 900){
+        this.portraitSize = ancho;
+      }
     }
   }
 
@@ -37,7 +44,10 @@ export class ProyectCardComponent implements OnInit, AfterViewInit{
     // Aquí puedes ejecutar la lógica adicional que necesites cuando el ancho cambie
     const ancho = this.projectCard.nativeElement.offsetWidth;
       console.log('Ancho del contenedor:', ancho);
-      this.portraitSize = ancho / 2;
+      this.portraitSize = ancho * 0.52;
+      if(ancho < 900){
+        this.portraitSize = ancho;
+      }
   }
 
   nextImage(): void{
@@ -59,6 +69,21 @@ export class ProyectCardComponent implements OnInit, AfterViewInit{
     this.carouselSlide?.setAttribute('style',`transform: translateX(${-this.portraitSize * this.imageNumberToShow}px)`)
   }
   
+
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.handleSwipe();
+  }
+  handleSwipe() {
+    if (this.touchEndX < this.touchStartX) {
+      this.nextImage();
+    } else if (this.touchEndX > this.touchStartX) {
+      this.previousImage();
+    }
+  }
  
  
 }

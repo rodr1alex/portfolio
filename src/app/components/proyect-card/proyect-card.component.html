@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="carousel">
+    <div class="carousel" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
         <div class="carousel__slide " id={{proyect.name}}>
             @for (img of proyect.images; track $index) {
                 <img src="{{img}}" class="carousel__img" >
