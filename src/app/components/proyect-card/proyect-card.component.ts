@@ -16,7 +16,7 @@ export class ProyectCardComponent implements OnInit, AfterViewInit{
   carouselSlide!: Element | null;
 
   ngOnInit(): void {
-     this.carouselSlide = document.getElementById(this.proyect.webUrl);   
+     this.carouselSlide = document.getElementById(this.proyect.name);   
      
   }
 
@@ -41,13 +41,18 @@ export class ProyectCardComponent implements OnInit, AfterViewInit{
   }
 
   nextImage(): void{
+    this.carouselSlide = document.getElementById(this.proyect.name); 
     if(this.imageNumberToShow >= this.proyect.images.length - 1) return;
     this.carouselSlide?.setAttribute('style',`transition: transform 0.5s ease-in-out`)
     this.imageNumberToShow++;
-    this.carouselSlide?.setAttribute('style',`transform: translateX(${-this.portraitSize * this.imageNumberToShow}px)`)
+    console.log( `js de mierda: ${-this.portraitSize * this.imageNumberToShow}`)
+    console.log(`la wea rara de js como siempre: ${this.carouselSlide}`)
+    this.carouselSlide?.setAttribute('style',`transform: translateX(${-this.portraitSize * this.imageNumberToShow}px)`);
+    this.carouselSlide?.classList.add('bg-black');
   }
 
   previousImage(): void{
+    this.carouselSlide = document.getElementById(this.proyect.name); 
     if(this.imageNumberToShow <= 0) return;
     this.carouselSlide?.setAttribute('style',`transition: transform 0.5s ease-in-out`)
     this.imageNumberToShow--;

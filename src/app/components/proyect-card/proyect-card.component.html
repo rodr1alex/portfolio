@@ -27,12 +27,12 @@
     </div>
 
     <div class="carousel">
-        <div class="carousel__slide" id={{proyect.webUrl}}>
+        <div class="carousel__slide " id={{proyect.name}}>
             @for (img of proyect.images; track $index) {
                 <img src="{{img}}" class="carousel__img" >
             }
         </div>
-        <div class="carousel__layer h-full absolute top-0"></div>
+        <div class="carousel__layer  absolute top-0"></div>
         <div class="absolute top-0 flex w-full h-full justify-center items-end p-4">
             <button class="carousel__button carousel__button--prev" (click)="previousImage()">❮</button>
             <button class="carousel__button carousel__button--next" (click)="nextImage()">❯</button>
