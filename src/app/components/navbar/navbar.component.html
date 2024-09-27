@@ -1,8 +1,13 @@
 <nav class="header bg-white flex items-center justify-between h-14">
-    <h1 class="mx-10">Porfolio</h1>
+    <a href="#about" class="md:hidden">
+        <h1 class="text-dark font-bold mx-10 " >Rodrigo Ayelef</h1>
+    </a>
+    <a href="#about" class="desktop">
+        <h1 class="text-dark font-bold mx-10 ">Rodrigo Ayelef FullStack Develper</h1>
+    </a>
     <div class="">
-        <i class="fa-solid fa-bars text-2xl mx-10" (click)="showMenu()" id="iconToggle"></i>
-        <ul class="menu absolute" id="menu">
+        <i class="fa-solid fa-bars text-2xl mx-10 md:hidden" (click)="showMenu()" id="iconToggle"></i>
+        <ul class="menu absolute " id="menu">
             <li class="mx-10"><a class="text-dark font-bold menu-item" href="#about" (click)="showMenu()">Inicio</a></li>
             <li class="mx-10"><a class="text-dark font-bold menu-item" href="#proyects" (click)="showMenu()">Proyectos</a></li>
             <li class="mx-10"><a class="text-dark font-bold menu-item" href="#skills" (click)="showMenu()">Habilidades</a></li>

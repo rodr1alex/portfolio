@@ -31,3 +31,13 @@
 .menu-visible{
     right: 0;
 }
+
+@media (min-width: 900px) {
+    .menu{
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        position: static;
+        background-color: white; 
+    }
+}
