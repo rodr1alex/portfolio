@@ -6,6 +6,28 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
 }
+.menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%; 
+    background-color: var(--white-off); 
+    position: absolute;
+    top: 56px;
+    right: -500px;
+    transition: ease-in 0.1s; 
+}
+.menu li{
+    margin: 1rem;
+}
+.menu-item{
+    
+}
 .menu-item:hover{
     color: #7203F4;
+}
+
+.menu-visible{
+    right: 0;
 }
